@@ -1,0 +1,56 @@
+.login {
+    display: flex;
+    width: 100wh;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    position: relative;
+    overflow: hidden;
+    color: white;
+   
+}
+.icon {
+    position: absolute;
+}
+.icon:first-child {
+    top: 30%;
+    left: 10%;
+}
+.icon:nth-child(2){
+    bottom: 0;
+    right: 0;
+}
+.icon:nth-child(3){
+    bottom: -30px;
+    left: 30%;
+    transform: rotate(-30deg);
+}
+
+.login_form {
+    background: #394867;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+.first_name , .last_name {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+.first_name img , .last_name img {
+    padding-right: 10px;
+    border-right: 2px solid #394867 ;
+    margin-right: 5px;
+}
+.login_form button {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
