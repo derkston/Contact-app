@@ -1,0 +1,19 @@
+.contact__list {
+    background-color: #F6F9FA;
+    border-radius: 12px;
+}
+.contact__item {
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact__item:nth-child(even){
+    background: #3948670D;
+}
+.contact__info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}

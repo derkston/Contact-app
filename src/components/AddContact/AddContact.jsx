@@ -2,8 +2,8 @@
 import { useRef } from 'react'
 import style from './AddContact.module.css'
 
-export default function AddContact(){
- 
+export default function AddContact({users , setUsers}){
+
     const formRef = useRef();
     
     function handleSubmit(e){
@@ -11,7 +11,7 @@ export default function AddContact(){
         e.preventDefault()
         const data = new FormData(e.target)
         const {name , family , tel , email , description} = formRef.current
-        const users = JSON.parse(localStorage.getItem('users'));
+        
         const newUser = {}
      
         for (let key of data.keys()){
@@ -72,9 +72,10 @@ export default function AddContact(){
         }
         
         if (Object.keys(newUser).length == 5){
-           users.push(newUser)
         
-            localStorage.setItem('users' , JSON.stringify(users))
+          
+            localStorage.setItem('users' , JSON.stringify([...users , newUser]))
+            setUsers(JSON.parse(localStorage.getItem('users')))
         }else {
             alert('Заполните все поля')
         }
