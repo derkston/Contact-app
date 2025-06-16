@@ -8,14 +8,15 @@ import Header from './components/header/header.jsx'
 import Main from './components/Main/Main.jsx'
 
 
-
-
 export default function App() {
-  const [isLoading , setIsLoading] = useState(false)
-
+  const [isLoading , setIsLoading] = useState(true)
+  
+  const user = JSON.parse(localStorage.getItem('user'));
+  
   useEffect(()=> {
-    if (localStorage.length != 0){
-      setIsLoading(true)
+    
+    if  ( user != null  ){
+      setIsLoading(false)
     }
   }, [])
   
@@ -23,8 +24,8 @@ export default function App() {
 
   return (
     <>
-      {isLoading ? <><Header/><Main/></> : <Login setIsLoading={setIsLoading} Loading={isLoading}/>}
-      {/* <button onClick={() => setIsLoading(!isLoading)}>{isLoading ? 'Выйти' : "Войти"}</button> */}
+      {isLoading ? <Login setIsLoading={setIsLoading} Loading={isLoading}/> :<><Header/><Main/></>}
+  
     </>
   )
 

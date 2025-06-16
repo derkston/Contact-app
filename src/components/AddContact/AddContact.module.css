@@ -1,0 +1,18 @@
+aside {
+    width: 100%;
+    max-width: 30%;
+    background-color: #394867;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+aside form {
+    padding: 0;
+}
+form .description:has(textarea) {
+    display: flex;
+    align-items: flex-start;
+}

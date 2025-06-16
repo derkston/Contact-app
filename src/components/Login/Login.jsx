@@ -12,10 +12,13 @@ export default function Login({setIsLoading , isLoading}){
         e.preventDefault();
 
         if (first_name.current.value != '' && last_name.current.value != ''){
-            localStorage.setItem('name' , first_name.current.value)
-            localStorage.setItem('last_name' , last_name.current.value)
+            localStorage.setItem('user' , JSON.stringify({
+                name : first_name.current.value ,
+                family : last_name.current.value
+            }))
+            localStorage.setItem('users' , JSON.stringify([]))
             setError('')
-            setIsLoading(!isLoading)
+            setIsLoading(false)
         }else {
             localStorage.clear()
             setError('error')

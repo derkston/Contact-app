@@ -21,11 +21,6 @@ a:hover  {
     text-decoration: none;
 }
 
-/* Common */
-
-aside, nav, footer, header, section, main {
-	display: block;
-}
 
 
 
@@ -90,4 +85,84 @@ body {
 .error {
     border: 2px solid red;
     
+}
+h1 {
+	font-family: Outfit;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 40px;
+
+}
+h2 {
+	font-family: Outfit;
+	font-weight: 500;
+	font-size: 26px;
+	line-height: 32px;
+
+}
+main {
+	width: 100%;
+	max-width: 80%;
+	margin: 0 auto;
+	display: flex;
+	gap: 25px;
+	margin-top: 50px;
+}
+
+form {
+    background: #394867;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+}
+form div:has(input) , form div:has(textarea){
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+div:has(input ) img , div:has(input ) img {
+    padding-right: 10px;
+    border-right: 2px solid #394867 ;
+    margin-right: 5px;
+}
+form button {
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+textarea {
+	width: 100%;
+	resize: vertical;
+	outline: none;
+}
+input , textarea , button{
+	font-family: Outfit;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 20px;
+	
+
+}
+
+a , button {
+    padding: 10px;
+    border: 1px solid #394867;
+    color: #394867;
+    border-radius: 12px;
+    font-family: Outfit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    transition: all .5s ease;
+}
+a:hover , button:hover {
+    background-color: #394867 ;
+    border: 1px solid white;
+    color: white;
 }
