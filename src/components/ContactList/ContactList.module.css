@@ -17,3 +17,13 @@
     align-items: center;
     gap: 30px;
 }
+.search__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.search__contact input {
+    padding: 10px;
+    border: 1px solid #394867;
+    border-radius: 12px;
+}
