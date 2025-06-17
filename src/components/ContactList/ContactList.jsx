@@ -3,7 +3,7 @@
 import style from './ContactList.module.css'
 // 
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 export default function ContactList({users}){
     const user = JSON.parse(localStorage.getItem('user'))
   
@@ -21,17 +21,19 @@ export default function ContactList({users}){
         </div>
          <ul className={style.contact__list}>
         {newUsers.map((e) => {
-             return <li key={e.name} className={style.contact__item}>
-                <h2>{e.name}</h2>
-                <div className={style.contact__info}>
-                    <a href={`tel:${e.tel}`}>{e.tel}</a>
-                    <a href={`Email:${e.email}`}>{e.email}</a>
-                </div>
-                <p>Описание: {e.description}</p>
-            </li>})
+             return <ContactItem item={e}/>})
          }
     </ul>
     </>
-    
-   
+}
+
+function ContactItem({item}){    
+    return <li key={item.name} className={style.contact__item}>
+                <h2>{item.name}</h2>
+                <div className={style.contact__info}>
+                    <a href={`tel:${item.tel}`}>{item.tel}</a>
+                    <a href={`Email:${item.email}`}>{item.email}</a>
+                </div>
+                <p>Описание: {item.description}</p>
+            </li>
 }
