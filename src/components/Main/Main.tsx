@@ -1,17 +1,16 @@
 // STYLE 
-import style from './main.module.css'
 
 // COMPONENTS 
+import { useState } from 'react'
+import { IUsers } from '../../types/types.js'
 import AddContact from '../AddContact/AddContact.jsx'
 import ContactList from '../ContactList/ContactList.jsx'
-import { useState } from 'react'
 export default function Main(){
-    const [users , setUsers] = useState(JSON.parse(localStorage.getItem('users')))
+    const [users , setUsers] = useState<IUsers[]>(JSON.parse(localStorage.getItem('users')!))
 
     return <main>
-        <AddContact users={users} setUsers={(e) => setUsers(e)}/>
+        <AddContact users={users} setUsers={(e : IUsers[]) => setUsers(e)}/>
         <section>
-          
             <ContactList  users={users}/>
         </section>
     </main>

@@ -1,17 +1,17 @@
 // STYLE
 import './App.css'
 // HOOKS 
-import {  useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 // Components
-import Login from './components/Login/Login.jsx'
 import Header from './components/header/header.jsx'
+import Login from './components/Login/Login.jsx'
 import Main from './components/Main/Main.jsx'
 
 
 export default function App() {
-  const [isLoading , setIsLoading] = useState(true)
+  const [isLoading , setIsLoading] = useState<boolean>(true)
   
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user : JSON = JSON.parse(localStorage.getItem('user')!);
   
   useEffect(()=> {
     
@@ -24,7 +24,7 @@ export default function App() {
 
   return (
     <>
-      {isLoading ? <Login setIsLoading={setIsLoading} Loading={isLoading}/> :<><Header/><Main/></>}
+      {isLoading ? <Login setIsLoading={setIsLoading}/> :<><Header/><Main/></>}
   
     </>
   )

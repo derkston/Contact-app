@@ -3,14 +3,15 @@ import { useRef, useState } from 'react'
 // STYLE
 import style from './login.module.css'
 
-export default function Login({setIsLoading , isLoading}){
-   
-    const first_name = useRef()
-    const last_name = useRef()
-    const [error , setError] = useState('')
-    function addProfile(e){
-        e.preventDefault();
 
+
+export default function Login({setIsLoading} : {setIsLoading : (arg : boolean) => void}){
+   
+    const first_name= useRef<HTMLInputElement>()
+    const last_name = useRef<HTMLInputElement>()
+    const [error , setError] = useState('')
+    function addProfile(e : React.FormEvent){
+        e.preventDefault();
         if (first_name.current.value != '' && last_name.current.value != ''){
             localStorage.setItem('user' , JSON.stringify({
                 name : first_name.current.value ,

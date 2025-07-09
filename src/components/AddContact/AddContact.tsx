@@ -1,10 +1,13 @@
 // STYLE 
 import { useRef } from 'react'
+import { IUsers } from '../../types/types.ts'
+import { handleSubmit } from '../services/handleSubmit.tsx'
 import style from './AddContact.module.css'
-import { handleSubmit } from '../services/handleSubmit';
 
-export default function AddContact({users , setUsers}){  
-    const formRef = useRef();  
+export default function AddContact({users , setUsers} : {users : IUsers[] , setUsers : (e : IUsers[]) => void}){ 
+    
+
+    const formRef = useRef<HTMLFormElement>();  
     return <aside>
         <h2>Добавьте контакт</h2>
         <form ref={formRef}  onSubmit={(e) => handleSubmit(e , users, setUsers,formRef)} className={style.add_contact}>

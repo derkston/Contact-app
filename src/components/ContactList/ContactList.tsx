@@ -1,13 +1,14 @@
 // STYLE 
 
+import { useState } from 'react'
+import { IUsers, TUser } from '../../types/types'
 import style from './ContactList.module.css'
 // 
 
-import { useState } from 'react'
-export default function ContactList({users}){
-    const user = JSON.parse(localStorage.getItem('user'))
-  
-    const [value , setValue] = useState('')
+export default function ContactList({users } : {users : IUsers[]}){
+
+    const user : TUser = JSON.parse(localStorage.getItem('user')!)
+    const [value , setValue] = useState<string>('')
     const newUsers = users.filter(e => {
        return e.name.toLowerCase().includes(value.toLowerCase())
     })
@@ -27,7 +28,7 @@ export default function ContactList({users}){
     </>
 }
 
-function ContactItem({item}){    
+function ContactItem({item}: {item : IUsers}){    
     return <li key={item.name} className={style.contact__item}>
                 <h2>{item.name}</h2>
                 <div className={style.contact__info}>

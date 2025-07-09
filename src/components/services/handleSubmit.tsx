@@ -54,7 +54,7 @@ export function handleSubmit(e , users , setUsers, formRef){
         }        
         if (Object.keys(newUser).length == 5){     
             localStorage.setItem('users' , JSON.stringify([...users , newUser]))
-            setUsers(JSON.parse(localStorage.getItem('users')))
+            setUsers(JSON.parse(localStorage.getItem('users')!))
         }else {
             alert('Заполните все поля')
         }
